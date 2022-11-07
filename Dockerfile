@@ -2,7 +2,7 @@ FROM cr.loongnix.cn/loongson/loongnix:20
 
 ARG GOSU_VERSION=1.14
 
-ENV GOSU_VERSION=${COMPOSE_VERSION}
+ENV GOSU_VERSION=${GOSU_VERSION}
 
 RUN set -ex; \
     ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime; \
