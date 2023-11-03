@@ -1,6 +1,6 @@
 FROM golang:1.18-buster
 
-ARG GOSU_VERSION=1.16
+ARG GOSU_VERSION=1.17
 
 ENV GOSU_VERSION=${GOSU_VERSION}
 
@@ -19,8 +19,7 @@ ENV GOPROXY=https://goproxy.io \
 
 RUN set -ex; \
     go mod download -x; \
-    go mod vendor; \
-    sed -i 's@|| s390x@|| s390x || loong64@g' vendor/github.com/opencontainers/runc/libcontainer/system/syscall_linux_64.go;
+    go mod vendor
 
 RUN set -ex; \
     mkdir /opt/gosu/dist; \
